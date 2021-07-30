@@ -1,0 +1,20 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-07-27 20:44:07
+ * @LastEditTime: 2021-07-29 14:23:26
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \flask\myproject\templates\base.html
+-->
+{% if current_user.is_authenticated %}
+<li class="nav-item">
+<a class="nav-link" href="{{url_for('logout')}}">登出系統</a>
+</li>
+{% else %}
+<li class="nav-item">
+<a class="nav-link" href="{{url_for('login')}}">登入系统</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="{{url_for('register')}}">注册账号</a>
+</li>
+{% endif %}
